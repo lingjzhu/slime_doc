@@ -8,8 +8,10 @@
 
 module load StdEnv/2023 apptainer/1.2.4
 # set cache directory
+# Please set all your cache directory to scratch. If you don't, cache files will be placed in your /home
 export APPTAINER_CACHEDIR=/home/lingjzhu/scratch/cache/apptainer
 export HF_DATASETS_CACHE=/home/lingjzhu/scratch/cache/huggingface
 export TRANSFORMERS_CACHE=/home/lingjzhu/scratch/cache/huggingface
 
+# remove --nv if you don't need a GPU
 apptainer run -C --nv --home /project/6080355/lingjzhu/llm/home -W $SLURM_TMPDIR -B /home:/cluster_home -B /project -B /scratch llm_env.sif bash /project/6080355/lingjzhu/llm/execute.sh
