@@ -9,7 +9,7 @@ module load StdEnv/2023 apptainer/1.2.4
 ```
 
 ### Set up the docker container using Apptainer.   
-   For example, if your docker container is `pytorch/pytorch:2.2.1-cuda12.1-cudnn8-devel'. You can use the command below to pull the docker container. 
+   For example, if your docker container is `pytorch/pytorch:2.2.1-cuda12.1-cudnn8-devel', you can use the command below to pull the docker container. If you are doing machine learning, you can use this container by default.
    ```
    export APPTAINER_CACHEDIR=/home/lingjzhu/scratch/cache/apptainer
    apptainer build local_env.sif docker://pytorch/pytorch:2.2.1-cuda12.1-cudnn8-devel
