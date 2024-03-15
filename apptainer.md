@@ -30,6 +30,7 @@ module load StdEnv/2023 apptainer/1.2.4
     ```
     apptainer shell -C --home /project/6080355/lingjzhu/llm/home -W $SLURM_TMPDIR -B /home:/cluster_home -B /project -B /scratch local_env.sif
     ```
+    Please make sure that `$SLURM_TMPDIR` is a foder that you have write access. If not, create your own temporary directory.
  - The step above will start a shell inside this container. You can create a new environment using  `conda`. 
     ```
     conda create -p /project/6080355/lingjzhu/llm/vllm_env --clone base
