@@ -46,6 +46,7 @@ module load StdEnv/2023 apptainer/1.2.4
    All your newly installed packages and your conda environment should be at   `/project/6080355/lingjzhu/llm/vllm_env`. It is outside the container itself and has no impact on the original container.
 
 ### (Optional) If you need a more customized environment than what `conda` can provide, you can also create a docker environment  
+Please do everything below on your local computer, where you have root/admin access. 
  - First, write a docker script to set up your environment. For example,
    ```
    FROM ubuntu:22.04
