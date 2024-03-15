@@ -1,4 +1,4 @@
-It is recommended that you use `Apptainer` to manage your local Python environment. 
+Installing packages on a public HPC server is not straightforward. It is recommended that you use `Apptainer` to manage your local Python environment. 
 
 ### Find your environmnet from [Docker Hub](https://hub.docker.com/).
 
