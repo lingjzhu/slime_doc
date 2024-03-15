@@ -2,6 +2,12 @@ It is recommended that you use `Apptainer` to manage your local Python environme
 
 ### Find your environmnet from [Docker Hub](https://hub.docker.com/).
 
+### Load apptainer in your environment
+First, you need to load `apptainer` in your environment. Docker is banned on public servers because it needs root access to run. 
+```
+module load StdEnv/2023 apptainer/1.2.4 
+```
+
 ### Set up the docker container using Apptainer.   
    For example, if your docker container is `pytorch/pytorch:2.2.1-cuda12.1-cudnn8-devel'. You can use the command below to pull the docker container. 
    ```
@@ -37,4 +43,23 @@ It is recommended that you use `Apptainer` to manage your local Python environme
    ```
    pip install vllm
    ```
-   All your newly installed packages and your conda environment should be at   `/project/6080355/lingjzhu/llm/vllm_env`. It is outside the container itself and has no impact on the original container. 
+   All your newly installed packages and your conda environment should be at   `/project/6080355/lingjzhu/llm/vllm_env`. It is outside the container itself and has no impact on the original container.
+
+### (Optional) If you need a more customized environment than what `conda` can provide, you can also create a docker environment  
+ - First, write a docker script to set up your environment. For example,
+   ```
+   FROM ubuntu:22.04
+   RUN apt update
+   RUN apt install -y git python3-pip libsndfile1
+   RUN apt install -y automake autoconf libtool
+   RUN git clone https://github.com/rhasspy/espeak-ng && \
+       cd espeak-ng && \
+       bash autogen.sh && ./configure && make -j8 && make install && \
+       ldconfig
+   RUN pip install git+https://github.com/shivammehta25/Matcha-TTS.git
+   RUN pip install gradio==3.48.0 # Breaks with gradio 4
+   CMD ["matcha-tts-app"]
+   ```
+- Then create a docker image using the above script. Please follow the tutorial [here](https://docs.docker.com/get-started/02_our_app/).
+- Upload your docker image to docker hub followings the steps described [here](https://docs.docker.com/get-started/04_sharing_app/). You'll need to register for an account on docker hub. 
+  
