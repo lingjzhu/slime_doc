@@ -62,5 +62,6 @@ Please do everything below on your local computer, where you have root/admin acc
    CMD ["matcha-tts-app"]
    ```
 - Then create a docker image using the above script. Please follow the tutorial [here](https://docs.docker.com/get-started/02_our_app/).
-- Upload your docker image to docker hub followings the steps described [here](https://docs.docker.com/get-started/04_sharing_app/). You'll need to register for an account on docker hub. 
+- Upload your docker image to docker hub followings the steps described [here](https://docs.docker.com/get-started/04_sharing_app/). You'll need to register for an account on docker hub.
+- Use `Apptainer` to pull this docker image on `Cedar`. See instructions above. 
   
