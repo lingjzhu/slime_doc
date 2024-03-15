@@ -8,3 +8,4 @@
    - Running parallalized jobs
    - [Downloading data from HuggingFace](docs/download.md)
    - Common audio processing scripts
+   - PyTorch Lightning
