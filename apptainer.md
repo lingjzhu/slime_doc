@@ -33,3 +33,8 @@ It is recommended that you use `Apptainer` to manage your local Python environme
     source activate /project/6080355/lingjzhu/llm/home/.bashrc
     conda activate /project/6080355/lingjzhu/llm/vllm_env
     ```
+ - 3.5. Now you can use `pip install` to install packages you like.
+   ```
+   pip install vllm
+   ```
+   All your newly installed packages and your conda environment should be at   `/project/6080355/lingjzhu/llm/vllm_env`. It is outside the container itself and has no impact on the original container. 
