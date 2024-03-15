@@ -3,6 +3,9 @@ It is recommended that you use `Apptainer` to manage your local Python environme
 ### Find your environmnet from [Docker Hub](https://hub.docker.com/).
 
 ### Load apptainer in your environment
+
+An example script is available [here](scripts/install_apptainer.sh)
+
 First, you need to load `apptainer` in your environment. Docker is banned on public servers because it needs root access to run. 
 ```
 module load StdEnv/2023 apptainer/1.2.4 
