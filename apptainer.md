@@ -1,6 +1,6 @@
 It is recommended that you use `Apptainer` to manage your local Python environment. 
 
-### Find your environmnet from [Docker Hub](https://hub.docker.com/);
+### Find your environmnet from [Docker Hub](https://hub.docker.com/).
 
 ### Set up the docker container using Apptainer.   
    For example, if your docker container is `pytorch/pytorch:2.2.1-cuda12.1-cudnn8-devel'. You can use the command below to pull the docker container. 
