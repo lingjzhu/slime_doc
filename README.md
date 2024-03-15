@@ -1,4 +1,5 @@
 # Technical documentation
 
-1. Setting up customized Python enviroment on `Cedar`.
-   - [Apptainer](Apptainer.md)
+- Setting up customized Python enviroment on `Cedar`.
+   - Installing [Apptainer](Apptainer.md)
+   - Running job through Apptainer
