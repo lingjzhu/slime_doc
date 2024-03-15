@@ -12,12 +12,12 @@ It is recommended that you use `Apptainer` to manage your local Python environme
    Note that this process consumes a lot of memory. Please submit this job through `sbatch`.
 
 
-### (Optional) If you can find a docker container that satisfies your need. You can install a virtual enviroment using the above container.
+### (Optional) If you can't find a docker container that satisfies your need. You can install a virtual enviroment using the above container.
  - Create a temporary home directory
     ```      
     mkdir /project/6080355/lingjzhu/llm/home
     ```
- - 3.2. Run your container
+ - Run your container
     ```
     apptainer shell -C --home /project/6080355/lingjzhu/llm/home -W $SLURM_TMPDIR -B /home:/cluster_home -B /project -B /scratch local_env.sif
     ```
