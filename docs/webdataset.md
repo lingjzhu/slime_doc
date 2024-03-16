@@ -2,6 +2,7 @@
 
 A good tutorial of `webdataset` from `speechbrain` is available [here](https://colab.research.google.com/drive/1s171JSA53_ktvc1zQp6uMcM0TChtCcZ9?usp=sharing).
 
+### Format
 ```
 > tar -t data-archives/shard-0000.tar
 spk1-utt1.wav
@@ -15,6 +16,8 @@ spk2-utt1.txt
 spk2-utt1.json
 ...
 ```
+
+### Loading
 `webdataset` can be loaded as an `IterableDataset` in `torch`
 ```
 import webdataset as wds  # Note the typical import shorthand
