@@ -4,7 +4,7 @@ Installing packages on a public HPC server is not straightforward. It is recomme
 
 ### Load apptainer in your environment
 
-An example script is available [here](scripts/install_apptainer.sh)
+An example script is available [here](scripts/install_apptainer.sh). Please run this job using `sbatch install_apptainer` to set up Apptainer.
 
 First, you need to load `apptainer` in your environment. Docker is banned on public servers because it needs root access to run. 
 ```
