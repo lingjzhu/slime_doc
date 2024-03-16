@@ -22,3 +22,5 @@ python parallel_resample.py
 ```
 
 Note that `max_workers` should be the same as `--ntasks`. 
+
+### Parallelization using `xargs`
