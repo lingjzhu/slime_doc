@@ -2,6 +2,7 @@
 
   ```
 from tqdm.contrib.concurrent import process_map
-
+# some functions and some lists of files
+...
 r = process_map(resample_audio, file_list, max_workers=20,chunksize=1)
   ```
