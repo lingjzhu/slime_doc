@@ -1,5 +1,6 @@
 ### Tracking progress of a parallel job
 
+You can parallelize your job with `process_map`, which also gives you a progress bar. Note that this is mostly for a small-scale job. It is not recommended for large-scale jobs.
   ```
 from tqdm.contrib.concurrent import process_map
 # some functions and some lists of files
