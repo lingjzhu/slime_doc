@@ -7,7 +7,7 @@ from tqdm.contrib.concurrent import process_map
 r = process_map(resample_audio, file_list, max_workers=20,chunksize=1)
   ```
 
-Then you can call this parallelized job using the slurm job script below.
+Save this script as `parallel_resample.py`. Then you can call this parallelized job using the slurm job script below.
 ```
 #!/bin/bash
 #SBATCH --account=def-lingjzhu
