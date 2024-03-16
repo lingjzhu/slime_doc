@@ -5,8 +5,9 @@
    - [Installing Apptainer](apptainer.md)
    - [Running job through Apptainer](run_apptainer.md)
 - Common usage
+   - Common data operations
    - Running parallalized jobs
    - [Downloading data from HuggingFace](docs/download.md)
    - [Common audio processing scripts](docs/audio_processing.md)
-   - webdataset
+   - [Webdataset](docs/webdataset.md)
    - PyTorch Lightning
