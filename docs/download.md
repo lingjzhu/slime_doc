@@ -2,6 +2,6 @@ Donwloading large-scale data should be done on `Cedar`. If you are running your 
 
 ### Write a script to download data
 An example script is available [here](../scripts/download.py).
-./
+
 ### Submit the job through a Slurm script
 Am example script is available [here](../scripts/download.sh)
