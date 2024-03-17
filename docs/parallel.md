@@ -25,3 +25,25 @@ python parallel_resample.py
 Note that `max_workers` should be the same as `--ntasks`. 
 
 ### Parallelization using `xargs`
+
+### Using Ray
+
+A tutorial is available [here](https://docs.ray.io/en/latest/ray-core/examples/gentle_walkthrough.html).
+
+```
+import ray
+ray.init()
+```
+
+```
+@ray.remote
+def retrieve_task(item):
+    return retrieve(item)
+
+start = time.time()
+object_references = [
+    retrieve_task.remote(item) for item in range(8)
+]
+data = ray.get(object_references)
+print_runtime(data, start)
+```
