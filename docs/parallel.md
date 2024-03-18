@@ -25,6 +25,12 @@ python parallel_resample.py
 Note that `max_workers` should be the same as `--ntasks`. 
 
 ### Parallelization using `xargs`
+You can also use `xargs` to parallelize your script. This is usually better than using Python functions to parallelize because `xargs` will simply skip all errors and proceed to the next file/process. This makes your script fault-tolerant.
+
+If you have [a list of files](scripts/parallel/files) to process, you can first generate a list of all your files as a `.txt` file, with one file per line, like this [filelist.txt](scripts/parallel/filelist.txt). 
+
+
+
 
 ### Using Ray
 
