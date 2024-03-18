@@ -39,7 +39,7 @@ cat filelist.txt | xargs -n 1 -P 4 bash call_python.sh
 ```
 
  - `cat filelist.txt` prints all content of `filelist.txt`
- - `|` means passing the output of the first shell command to the shell command after it.
+ - `|` means passing the output of its shell command as the input to its right shell command.
  - calling `xargs` launches multiple parallel processes
    - `-n 1` means accepting one line of the output from `cat filelist.txt`. In this context, it's one file path.
    - `-P 4` means launches 4 parallel processes
