@@ -1,5 +1,8 @@
 import argparse
 
+def convert(input_file):
+  return len(input_file)
+
 
 if __name__ == "__main__":
 
