@@ -27,7 +27,23 @@ Note that `max_workers` should be the same as `--ntasks`.
 ### Parallelization using `xargs`
 You can also use `xargs` to parallelize your script. This is usually better than using Python functions to parallelize because `xargs` will simply skip all errors and proceed to the next file/process. This makes your script fault-tolerant.
 
-If you have [a list of files](scripts/parallel/files) to process, you can first generate a list of all your files as a `.txt` file, with one file per line, like this [filelist.txt](scripts/parallel/filelist.txt). 
+If you have [a list of files](../scripts/parallel/files) to process, you can first generate a list of all your files as a `.txt` file, with one file per line, like this [filelist.txt](../scripts/parallel/filelist.txt). 
+
+Then you can write a [Python script](../scripts/parallel/process_a_file.py) to process one file. `argparse` is used so that this script can accept a command line argument as an input. 
+
+Then you need [a bash script](../scripts/parallel/call_python.sh) to call your Python script. The `$1` means the first argument passed to this batch script. Here a file path will be passed to this bash script and this argument will immediately be passed to the Python script. 
+
+Finally, we parallel this bash script using `xargs`, as in [this bash script](../scripts/parallel/run_parallel.sh).
+```
+cat filelist.txt | xargs -n 1 -P 4 bash call_python.sh
+```
+
+ - `cat filelist.txt` prints all content of `filelist.txt`
+ - `|` means passing the output of the first shell command to the shell command after it.
+ - calling `xargs` launches multiple parallel processes
+   - `-n 1` means accepting one line of the output from `cat filelist.txt`. In this context, it's one file path.
+   - `-P 4` means launches 4 parallel processes
+   - `bash call_python.sh` calls the bash script. In addition to calling this bash script, `xargs` also passes one file path as an argument to `call_python.sh`. This file path is the `$1` inside `call_python.sh`. 
 
 
 
