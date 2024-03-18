@@ -43,7 +43,8 @@ cat filelist.txt | xargs -n 1 -P 4 bash call_python.sh
  - calling `xargs` launches multiple parallel processes
    - `-n 1` means accepting one line of the output from `cat filelist.txt`. In this context, it's one file path.
    - `-P 4` means launches 4 parallel processes
-   - `bash call_python.sh` calls the bash script. In addition to calling this bash script, `xargs` also passes one file path as an argument to `call_python.sh`. This file path is the `$1` inside `call_python.sh`. 
+   - `bash call_python.sh` calls the bash script. In addition to calling this bash script, `xargs` also passes one file path as an argument to `call_python.sh`. This file path is the `$1` inside `call_python.sh`.
+   - When you submit your job script, please request as many cpu cores as the number of processes specified in `xargs`. 
 
 
 
