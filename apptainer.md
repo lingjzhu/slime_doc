@@ -40,7 +40,7 @@ module load StdEnv/2023 apptainer/1.2.4
  - After the environment is created. You can activate this environment using its absolute path.
     ```
     conda init
-    source activate /project/6080355/lingjzhu/llm/home/.bashrc
+    source /project/6080355/lingjzhu/llm/home/.bashrc
     conda activate /project/6080355/lingjzhu/llm/vllm_env
     ```
  - Now you can use `pip install` to install packages you like.
