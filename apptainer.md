@@ -20,8 +20,8 @@ module load StdEnv/2023 apptainer/1.2.4
    The first line sets the cache directory for `Apptainer`. Otherwise cache files will be stored in your `/home` directory. Please avoid storing anything in your `/home` directory.
    Note that this process consumes a lot of memory. Please submit this job through `sbatch`.
 
-### (Optional) You can install libaries inside an apptainer as a sanbox.
- - First, build an apptainer sanbox, which allows you to modify it.
+### (Optional) You can install libaries inside an apptainer sanbox.
+ - First, build an apptainer sanbox, which can be modified.
    ```
    export APPTAINER_CACHEDIR=/home/lingjzhu/scratch/cache/apptainer
    apptainer build --sandbox local_env/ docker://pytorch/pytorch:2.2.1-cuda12.1-cudnn8-devel
