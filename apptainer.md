@@ -26,6 +26,11 @@ module load StdEnv/2023 apptainer/1.2.4
    export APPTAINER_CACHEDIR=/home/lingjzhu/scratch/cache/apptainer
    apptainer build --sandbox local_env/ docker://pytorch/pytorch:2.2.1-cuda12.1-cudnn8-devel
    ```
+ - Run your container interactively
+    ```
+    apptainer shell --writable --home /project/6080355/lingjzhu/llm/home -W $SLURM_TMPDIR -B /home:/cluster_home -B /project -B /scratch local_env/
+    ```
+    Please make sure that `$SLURM_TMPDIR` is a foder that you have write access. If not, create your own temporary directory.
  - Then you can use `pip install` or `conda install` to install files inside the sanbox.
  - Finally, you can export the sanbox as a single `.sif` file.
    ```
